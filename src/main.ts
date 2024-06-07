@@ -2,7 +2,7 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
-import { bulbasur } from './bases/03-clases.ts'
+import { charmander } from './bases/04-inyection.ts'
 //import { name,age, isValid, templateString } from './bases/01-types.ts';
 //import { bulbasur, pokemons } from './bases/02-objects.ts'
 
@@ -15,7 +15,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1> Hello ${bulbasur.name}  ${bulbasur.id}</h1>
+    <h1> Hello ${charmander.name}  ${charmander.id}</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
