@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Move, PokeapiResponse } from "../interfaces/pokeapi-response.interface";
 
 // export class Pokemon {
 //     public id: number;
@@ -35,14 +36,18 @@ export class Pokemon {
             console.log(`${ this.name }, ${ this.name }`);
         }
 
-        async getMoves(){
+        async getMoves(): Promise<Move[]> {
             // const resp = 10;
-            const resp = await axios.get('https://pokeapi.co/api/v2/pokemon/4');
-            console.log(resp.data.moves)
+            const { data } = await axios.get  <PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4');
+            console.log(data.moves) 
+
+            return data.moves;
         }
 }
 
 export const bulbasur = new Pokemon(4,'pikachu', 'electrico');
 
-bulbasur.scream();
-bulbasur.speak();
+console.log(bulbasur)
+console.log (bulbasur.getMoves() );
+// bulbasur.scream();
+// bulbasur.speak();
